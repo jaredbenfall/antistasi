@@ -55,6 +55,14 @@ if (_useBackpack) then {
     _backpack = ([caja, "backpack"] call AS_fnc_getBestItem);
 };
 
+private _blacklist = AS_persistent getVariable "blacklisted";
+private _unfriendlyBlacklist = []; 
+{
+    private _indexOfWeapon = AS_allWeaponsFriendly find _x;
+    _unfriendlyBlacklist = _unfriendlyBlacklist + AS_allWeapons select _indexOfWeapon; 
+} forEach _blacklist;
+_primaryWeapons = _primaryWeapons - [_unfriendlyBlacklist];
+
 private _primaryWeapon = ([caja, _primaryWeapons, _primaryMagCount] call AS_fnc_getBestWeapon);
 private _primaryMags = [[], []];
 if (_primaryWeapon != "") then {

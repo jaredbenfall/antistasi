@@ -7,5 +7,6 @@ AS_database_persistents = [
 	"civPerc", "spawnDistance", "minimumFPS", "cleantime",  // game options
 	"secondsForAAFAttack", "destroyedLocations", "vehiclesInGarage", "destroyedBuildings",
 	"antenasPos_alive", "antenasPos_dead", "vehicles", "date", "BE_module",
-	"patrollingLocations", "patrollingPositions"
+	"patrollingLocations", "patrollingPositions",
+	"blacklisted"
 ];

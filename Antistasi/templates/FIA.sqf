@@ -180,12 +180,14 @@ AS_FIAvehicles setVariable ["C_Heli_Light_01_civil_F", 6000];
 // Initializes unlocked stuff. These are modified by templates and ACE.
 unlockedWeapons = [
 	"hgun_PDW2000_F",
-	"hgun_ACPC2_F"
+	"hgun_ACPC2_F",
+	"arifle_MXC_F"
 ];
 
 unlockedMagazines = [
 	"9Rnd_45ACP_Mag",
-	"30Rnd_9x21_Mag"
+	"30Rnd_9x21_Mag",
+	"30Rnd_65x39_caseless_mag"
 ];
 
 unlockedBackpacks = [

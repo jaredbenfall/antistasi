@@ -7,6 +7,7 @@
 #include "dialogs\manageHQ\dialogs.hpp"
 #include "dialogs\manageNATO\dialogs.hpp"
 #include "dialogs\buyVehicle\dialogs.hpp"
+#include "dialogs\blacklistWeapon\dialogs.hpp"
 
 class build_menu
 {

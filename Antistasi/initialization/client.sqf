@@ -84,7 +84,7 @@ if not hayACE then {
 MIASquadUnits = creategroup WEST;  // units that are not in the squad because they lost communication with the player (no radio).
 player setvariable ["compromised", 0];  // Used by undercover mechanics
 player setVariable ["punish",0,true];  // punish time for Team kill
-player setVariable ["money",100,true];  // initial money
+player setVariable ["money",1000,true];  // initial money
 player setVariable ["BLUFORSpawn",true,true];  // means that the unit triggers spawn of zones.
 player setUnitRank (AS_ranks select 0);
 player setVariable ["rank", (AS_ranks select 0), true];
@@ -201,6 +201,8 @@ removeAllActions petros;
 removeAllActions caja;
 [caja,"arsenal"] call AS_fnc_addAction;
 [caja,"transferFrom"] call AS_fnc_addAction;
+// Blacklist addaction 
+[caja,"blacklistWeapon"] call AS_fnc_addAction;
 
 removeAllActions mapa;
 mapa addAction [localize "str_act_gameOptions", {CreateDialog "game_options_commander";},nil,0,false,true,"","(isPlayer _this) and (_this == AS_commander) and (_this == _this getVariable ['owner',_this])"];

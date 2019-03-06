@@ -256,6 +256,7 @@ AS_weapons = [
 AS_allGrenades = [];  // fired grenades, not throwable
 AS_allWeapons = [];
 AS_allWeaponsAttrs = [];
+AS_allWeaponsFriendly = []; 
 {
 	_name = configName _x;
 	_name = [_name] call BIS_fnc_baseWeapon;
@@ -265,6 +266,7 @@ AS_allWeaponsAttrs = [];
 		_magazines = (getArray (configFile >> "CfgWeapons" >> _name >> "magazines"));
 		_bull_weight = (getNumber (configFile >> "CfgMagazines" >> (_magazines select 0) >> "mass"));
 		_bull_speed = (getNumber (configFile >> "CfgMagazines" >> (_magazines select 0) >> "initSpeed"));
+        _friendly = (getText (configFile >> "CfgWeapons" >> _name >> "displayName"));
 
 		if (isNil "_bull_weight") then {
 			_bull_weight = 0;
@@ -274,6 +276,7 @@ AS_allWeaponsAttrs = [];
 		};
 
 		AS_allWeaponsAttrs pushBack [_weight, _bull_weight*_bull_speed/100*_bull_speed/100, _magazines];
+        AS_allWeaponsFriendly pushback _friendly;
 
 		_weaponType = ([_name] call BIS_fnc_itemType) select 1;
 

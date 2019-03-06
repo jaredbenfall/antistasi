@@ -55,6 +55,9 @@ class AS {
         FNC_BASE(onPlayerDisconnect);
 
         FNC_BASE(showInGarageInfo);
+
+        // Blacklist function
+        FNC(Functions,addWeaponToBlacklist);
     };
 
     class common {
@@ -231,6 +234,7 @@ class AS {
         #include "dialogs\manageNATO\cfgFunctions.hpp"
         #include "dialogs\recruitUnit\cfgFunctions.hpp"
         #include "dialogs\recruitSquad\cfgFunctions.hpp"
+        #include "dialogs\blacklistWeapon\cfgFunctions.hpp"
     };
 };
 

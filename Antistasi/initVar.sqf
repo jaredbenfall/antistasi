@@ -154,6 +154,9 @@ if (!isServer) exitWith {};
 
 // Below this point, everything defined only belongs to the server
 
+_blacklistedWeps = [];
+AS_Pset("blacklisted", _blacklistedWeps);
+
 // create container to store spawns
 call AS_spawn_fnc_initialize;
 
@@ -186,7 +189,10 @@ AS_Pset("patrollingLocations", []);
 AS_Pset("patrollingPositions", []);
 
 // These are default values for the start.
-AS_Pset("hr",8); //initial HR value
+// AS_Pset("hr", 8); Default HR value. Changed for testing.
+// AS_Pset("resourcesFIA",100); Default money value. Changed for testing. 
+
+AS_Pset("hr",20); //initial HR value
 AS_Pset("resourcesFIA",1000); //Initial FIA money pool value
 
 AS_Pset("resourcesAAF",0); //Initial AAF resources
